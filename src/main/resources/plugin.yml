@@ -1,0 +1,11 @@
+name: SoDungeonEvent
+version: 1.0
+main: so.max1soft.sde.SDEPlugin
+api-version: 1.16
+description: Плагин для спавна и управления стражниками в Minecraft.
+authors:
+  - SoMax1osoft
+commands:
+  sodungeon:
+    description: "sodungeon Info"
+    usage: sodungeon info

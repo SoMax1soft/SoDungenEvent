@@ -1,0 +1,143 @@
+spawn-interval: 15 # Интервал спавна в минутах
+world: arena # Имя мира, в котором будут спавниться стражники
+spawn-locations:
+  location1:
+    x: -256.500
+    y: 189
+    z: -14.500
+    name: "Стражник 1"
+    health: 50
+    damage: 25
+  location2:
+    x: -250.500
+    y: 189
+    z: -14.500
+    name: "Стражник 2"
+    health: 50
+    damage: 25
+  location3:
+    x: -253.500
+    y: 189
+    z: -14.500
+    name: "Стражник 3"
+    health: 50
+    damage: 25
+  location4:
+    x: -247.500
+    y: 189
+    z: -14.500
+    name: "Стражник 4"
+    health: 50
+    damage: 25
+  location5:
+    x: -244.500
+    y: 189
+    z: -14.500
+    name: "Стражник 5"
+    health: 50
+    damage: 25
+  location6:
+    x: -246.500
+    y: 189
+    z: -21.500
+    name: "Стражник 6"
+    health: 50
+    damage: 25
+  location7:
+    x: -242.500
+    y: 189
+    z: -21.500
+    name: "МЕГА СТРАЖНИК 2"
+    health: 120.0
+    damage: 50.0
+  location8:
+    x: -244.500
+    y: 189
+    z: -21.500
+    name: "МЕГА СТРАЖНИК 1"
+    health: 120.0
+    damage: 50.0
+  location9:
+    x: -262.500
+    y: 189
+    z: -26.500
+    name: "Стражник 7"
+    health: 50
+    damage: 25
+  location10:
+    x: -258.500
+    y: 189
+    z: -34.500
+    name: "Стражник 8"
+    health: 50
+    damage: 25
+  location11:
+    x: -254.500
+    y: 189
+    z: -34.500
+    name: "Стражник 9"
+    health: 50
+    damage: 25
+  location12:
+    x: -242.500
+    y: 189
+    z: -31.500
+    name: "Стражник 10"
+    health: 50
+    damage: 25
+  location13:
+    x: -242.500
+    y: 189
+    z: -37.500
+    name: "Стражник 11"
+    health: 50
+    damage: 25
+  location14:
+    x: -242.500
+    y: 189
+    z: -35.500
+    name: "МЕГА СТРАЖНИК 12"
+    health: 120.0
+    damage: 50.0
+  location15:
+    x: -242.500
+    y: 189
+    z: -33.500
+    name: "МЕГА СТРАЖНИК 13"
+    health: 120.0
+    damage: 50.0
+  location16:
+    x: -272.500
+    y: 189
+    z: -36.500
+    name: "Стражник 14"
+    health: 50
+    damage: 15
+  location17:
+    x: -271.500
+    y: 189
+    z: -31.500
+    name: "Стражник 15"
+    health: 50
+    damage: 15
+  location18:
+    x: -281.500
+    y: 189
+    z: -32.500
+    name: "Стражник 16"
+    health: 50
+    damage: 15
+  location19:
+    x: -276.500
+    y: 189
+    z: -35.500
+    name: "Стражник 17"
+    health: 50
+    damage: 15
+  location20:
+    x: -277.500
+    y: 189
+    z: -5.500
+    name: "ВЛАСТИТЕЛЬ"
+    health: 250.0
+    damage: 75.0
