@@ -33,14 +33,14 @@ public class SpawnTask extends BukkitRunnable {
 
         Bukkit.getLogger().info("Запуск задачи спавна стражников");
 
-        // Загрузка имён существующих стражников из конфигурационного файла
+
         existingGuardNames.clear();
         for (String locationKey : plugin.getConfig().getConfigurationSection("spawn-locations").getKeys(false)) {
             String name = plugin.getConfig().getString("spawn-locations." + locationKey + ".name");
             existingGuardNames.add(ChatColor.RED.toString() + name);
         }
 
-        // Спавним новых стражников на указанных локациях
+
         for (String locationKey : plugin.getConfig().getConfigurationSection("spawn-locations").getKeys(false)) {
             double x = plugin.getConfig().getDouble("spawn-locations." + locationKey + ".x");
             double y = plugin.getConfig().getDouble("spawn-locations." + locationKey + ".y");
@@ -51,7 +51,7 @@ public class SpawnTask extends BukkitRunnable {
 
             Location location = new Location(world, x, y, z);
 
-            // Проверяем, есть ли уже стражник с таким именем
+
             boolean isExistingGuard = world.getEntitiesByClass(WitherSkeleton.class).stream()
                     .anyMatch(skeleton -> {
                         String customName = skeleton.getCustomName();
@@ -60,24 +60,24 @@ public class SpawnTask extends BukkitRunnable {
 
             if (isExistingGuard) {
                 Bukkit.getLogger().info("Стражник с именем '" + name + "' уже существует, пропускаем.");
-                continue; // Пропускаем текущую локацию
+                continue;
             }
 
             WitherSkeleton skeleton = (WitherSkeleton) location.getWorld().spawnEntity(location, EntityType.WITHER_SKELETON);
             skeleton.setCustomName(ChatColor.RED.toString() + name);
             skeleton.setCustomNameVisible(true);
 
-            // Установка здоровья
+
             AttributeInstance healthAttr = skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH);
             if (healthAttr != null) {
-                healthAttr.setBaseValue(health); // Устанавливаем максимальное здоровье
-                skeleton.setHealth(health); // Устанавливаем текущее здоровье
+                healthAttr.setBaseValue(health);
+                skeleton.setHealth(health);
             }
 
-            // Установка урона
+
             AttributeInstance damageAttr = skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE);
             if (damageAttr != null) {
-                damageAttr.setBaseValue(damage); // Устанавливаем урон
+                damageAttr.setBaseValue(damage);
             }
 
             Bukkit.getLogger().info("Стражник " + name + " успешно заспавнен на " + location);

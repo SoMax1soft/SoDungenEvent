@@ -78,7 +78,6 @@ public class SDEPlugin extends JavaPlugin implements CommandExecutor  {
     }
     @Override
     public void onDisable() {
-        // Код для отключения плагина, если требуется
     }
 
     public static SDEPlugin getInstance() {
@@ -91,8 +90,7 @@ public class SDEPlugin extends JavaPlugin implements CommandExecutor  {
     }
 
     private void startSpawnTask() {
-        int interval = getConfig().getInt("spawn-interval", 10); // Значение по умолчанию 10 минут, если не указано
-        new SpawnTask().runTaskTimer(this, 0L, interval * 20L * 60); // Интервал в тиках (секундах) умножается на 60 для минут
-        Bukkit.getLogger().info("Задача спавна стражников запущена с интервалом: " + interval + " минут");
+        int interval = getConfig().getInt("spawn-interval", 10);
+        new SpawnTask().runTaskTimer(this, 0L, interval * 20L * 60);
     }
 }

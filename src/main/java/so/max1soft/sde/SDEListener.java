@@ -16,8 +16,8 @@ import java.util.Map;
 public class SDEListener implements Listener {
 
     private final Map<String, Long> lastMessageTime = new HashMap<>();
-    private final long MESSAGE_COOLDOWN = 3000L; // 3 секунды в миллисекундах
-    private boolean globalMessageSent = false; // Флаг, указывающий, что глобальное сообщение уже отправлено
+    private final long MESSAGE_COOLDOWN = 3000L;
+    private boolean globalMessageSent = false;
 
     @EventHandler
     public void onEntityDeath(EntityDeathEvent event) {
@@ -58,23 +58,23 @@ public class SDEListener implements Listener {
             globalMessageSent = true;
             lastMessageTime.put("global", currentTime);
 
-            // Отправляем глобальное сообщение
+
             String formattedMessage = message.replace("%player%", killer.getName());
             sendMessageToAllPlayers(formattedMessage, reward);
 
-            // Выдаем награду
+
             giveReward(killer, reward);
 
-            // Сброс флага после задержки
+
             new BukkitRunnable() {
                 @Override
                 public void run() {
                     globalMessageSent = false;
                 }
-            }.runTaskLater(SDEPlugin.getInstance(), 60L); // 60 тиков = 3 секунды
+            }.runTaskLater(SDEPlugin.getInstance(), 60L);
 
         } else if (globalMessageSent) {
-            // Если глобальное сообщение уже отправлено, отправляем сообщение в радиусе
+
             String formattedMessage = message.replace("%player%", killer.getName());
             sendMessageToNearbyPlayers(skeleton.getLocation(), formattedMessage, reward);
         }
@@ -91,23 +91,23 @@ public class SDEListener implements Listener {
             globalMessageSent = true;
             lastMessageTime.put("global", currentTime);
 
-            // Отправляем глобальное сообщение
+
             String formattedMessage = message.replace("%player%", killer.getName());
             sendMessageToAllPlayers(formattedMessage, reward);
 
-            // Выдаем награду
+
             giveReward(killer, reward);
 
-            // Сброс флага после задержки
+
             new BukkitRunnable() {
                 @Override
                 public void run() {
                     globalMessageSent = false;
                 }
-            }.runTaskLater(SDEPlugin.getInstance(), 60L); // 60 тиков = 3 секунды
+            }.runTaskLater(SDEPlugin.getInstance(), 60L);
 
         } else if (globalMessageSent) {
-            // Если глобальное сообщение уже отправлено, отправляем сообщение в радиусе
+
             String formattedMessage = message.replace("%player%", killer.getName());
             sendMessageToNearbyPlayers(skeleton.getLocation(), formattedMessage, reward);
         }
@@ -142,7 +142,7 @@ public class SDEListener implements Listener {
     }
 
     private void giveReward(Player player, int amount) {
-        // Команда выдачи награды
+
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "p give " + player.getName() + " " + amount);
     }
 }
